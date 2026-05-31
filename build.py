@@ -13,16 +13,16 @@ if TEMPLATES.exists() == False:
     print("Warning: templates folder not found")
 
 env = Environment(
-    loader = FileSystemLoader("templates")
+    loader = FileSystemLoader(["src", "templates"])
 )
 
 pages = [
-    ("base.html", "Home")
+    ("index.html", "Home")
 ]
 
 for page, title in pages:
-    template = env.get_template(page)
-    html = template.render(
+    index = env.get_template(page)
+    html = index.render(
         title = title
     )
 
