@@ -1,6 +1,16 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
 
-{% block content %}
-<h1>Home</h1>
-<p>Meu site gerado em Python.</p>
-{% endblock %}
+{% include 'header.html' %}
+
+{% include 'main.html' %}
+
+{% include 'footer.html' %}
+
+</body>
+</html>
