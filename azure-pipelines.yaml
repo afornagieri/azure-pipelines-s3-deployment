@@ -1,0 +1,21 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.13'
+
+- script: |
+    pip install -r requirements.txt
+    python build.py
+  displayName: Build Site
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: dist
+    artifactName: website
